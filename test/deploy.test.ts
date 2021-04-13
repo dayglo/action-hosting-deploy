@@ -147,7 +147,7 @@ describe("deploy", () => {
       const deployFlags = args[0][1];
       expect(deployFlags).toContain("deploy");
       expect(deployFlags).toContain("--only");
-      expect(deployFlags).toContain("hosting");
+      expect(deployFlags).toContain("functions,scheduler,pubsub,auth,hosting");
     });
   });
 });

@@ -147,7 +147,11 @@ export async function deployProductionSite(
   const { projectId, target } = productionDeployConfig;
 
   const deploymentText = await execWithCredentials(
-    ["deploy", "--only", `hosting${target ? ":" + target : ""}`],
+    [
+      "deploy",
+      "--only",
+      `functions,scheduler,pubsub,auth,hosting${target ? ":" + target : ""}`,
+    ],
     projectId,
     gacFilename
   );
